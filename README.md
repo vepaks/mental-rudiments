@@ -1,0 +1,2 @@
+# mental-rudiments
+blog workshop
