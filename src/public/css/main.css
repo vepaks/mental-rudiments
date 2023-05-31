@@ -1,0 +1,83 @@
+/*@import "https://fonts.googleapis.com/css?family=Comfortaa:300,400,700&subset=cyrillic,cyrillic-ext,latin-ext";*/
+@import url("https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap");
+
+body {
+    margin: 10px 15%;
+    min-height: 100vh;
+    background-color: whitesmoke;
+    text-align: center;
+    justify-content: center;
+}
+h1 {
+    font-family: Bebas Neue, sans-serif;
+    text-align: center;
+    margin-top: 25px;
+    margin-bottom: 15px;
+    font-size: 40px;
+    letter-spacing: 5px;
+    color: #1d5167;
+}
+.container {
+    margin: 10px 10%;
+    border-radius: 10px;
+    border-style: solid;
+    text-align: center;
+}
+a {
+    position: relative;
+    display: inline-block;
+    /*fonts*/
+    font-family: "Open Sans", sans-serif;
+    color: #454545;
+    background: transparent;
+    /*border*/
+    border-width: 2px;
+    border-style: solid;
+    border-color: #454545;
+
+    margin: 0.5em;
+    padding: 0.25em 0.5em;
+
+    /*text*/
+    transition: all 0.3s ease-in-out;
+    text-align: center;
+    font-weight: bold;
+    font-size: 16px;
+    letter-spacing: 2px;
+    text-decoration: none;
+    text-transform: uppercase;
+
+    cursor: pointer;
+    box-shadow: 1px 1px 0 0, 2px 2px 0 0, 3px 3px 0 0, 4px 4px 0 0, 5px 5px 0 0;
+
+    user-select: none;
+    -webkit-user-select: none;
+    touch-action: manipulation;
+}
+
+a:active {
+    box-shadow: 0 0 0 0;
+    top: 5px;
+    left: 5px;
+}
+a:hover {
+    color:#1d5167;
+    border-color: #FBCB65;
+}
+
+/*Media Query: Tablet or smaller*/
+@media only screen and (max-width: 1000px) {
+    body {
+        margin: 10px;
+    }
+
+    .panel a {
+        display: block;
+        padding: 10px;
+    }
+
+    a:active {
+        color: red;
+    }
+
+}
