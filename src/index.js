@@ -13,7 +13,6 @@ handlebarsConfig(app)
 
 // Routes
 app.use(homeControler)
-
 app.get("*", (req, res) => {
     res.render('404');
 })
