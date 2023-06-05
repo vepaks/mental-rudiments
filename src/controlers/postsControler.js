@@ -6,4 +6,11 @@ const router = require('express').Router();
     res.render("create");
  })
 
+router.post("/create", (req, res) => {
+    console.log(req.body);
+
+    res.send("Create post");
+})
+
+
 module.exports = router;
