@@ -39,6 +39,64 @@ h4 {
     border-style: solid;
     text-align: center;
 }
+
+/*form style*/
+/* Form style */
+.form {
+    border-radius: 5px;
+    padding: 20px;
+    width: 36%;
+    margin: auto;
+    background: #fff;
+}
+
+.form label {
+    background: #607588;
+    color: white;
+    padding: 12px;
+    border-top-left-radius: 4px;
+    border-top-right-radius: 4px;
+}
+
+.form input[type="text"],
+.form input[type="number"],
+.form select,
+.form textarea {
+    width: 100%;
+    display: inline-block;
+    border: 1px solid #ccc;
+    box-sizing: border-box;
+    padding: 12px 20px 12px 12px;
+    border-radius: 0 4px 4px 4px;
+    margin: 8px 0 2em;
+}
+
+.form input.difficulty {
+    width: 20%;
+}
+
+.form input.search {
+    width: 50%;
+}
+
+.form input[type="submit"] {
+    background-color: #545775;
+    border: none;
+    padding: 8px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 18px;
+    width: 50%;
+    color: white;
+    text-transform: uppercase;
+    border-radius: 4px;
+}
+
+.form input[type="submit"]:hover {
+    background-color: #718F94;
+    cursor: pointer;
+}
 /*Link style*/
 a {
     position: relative;

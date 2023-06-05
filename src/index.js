@@ -4,6 +4,7 @@ const expressConfig = require('./config/expressConfig')
 const handlebarsConfig = require('./config/handlebarsConfig')
 
 const homeControler = require('./controlers/homeControler')
+const postsControler = require('./controlers/postsControler')
 
 const app = express();
 const PORT = 5000;
@@ -13,9 +14,8 @@ handlebarsConfig(app)
 
 // Routes
 app.use(homeControler)
-app.get("*", (req, res) => {
-    res.render('404');
-})
+app.use("/posts", postsControler)
+
 app.listen(PORT, () => {
     console.log(`Server is running on port http://localhost:${PORT}.`);
 });
