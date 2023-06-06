@@ -1,15 +1,13 @@
 const router = require('express').Router()
+const postsManager = require('../managers/postsManager');
 
 router.get( '/', (req, res) => {
-    res.render('index');
+    const posts = postsManager.getAllPosts()
+    res.render('index', { posts });
 })
 
 router.get('/about', (req, res) => {
     res.render('about')
 })
-
-// router.get ('*', (req, res) => {
-//     res.render('404')
-// })
 
 module.exports = router;
