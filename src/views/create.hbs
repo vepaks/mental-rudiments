@@ -1,27 +1,22 @@
 <main>
-    <h1>Create</h1>
+    <h1>Create POST</h1>
     <div class="form">
-        <form action="/posts/create" method="POST">
-            <label for="title">Title</label>
-            <input type="text" id="title" name="title">
-
-            <label for="text">Text</label>
-            <textarea id="text" name="text"></textarea>
-
-<!--            <label for="tags">Tags</label>-->
-<!--            <input type="text" id="tags" name="tags">-->
-
-            <label for="imageUrl">Image URL</label>
-            <input type="text" id="imageUrl" name="imageUrl">
-
-            <label for="categories">Categories</label>
-            <select id="categories" name="categories" multiple>
-                <option value="category1">Category 1</option>
-                <option value="category2">Category 2</option>
-                <option value="category3">Category 3</option>
-                <!-- Add more options as needed -->
+        <form action='/posts/create' method="POST">
+            <label for="name">Name</label>
+            <input type="text" id="name" name="name">
+            <label for="name">Description</label>
+            <textarea id="name" name="description"></textarea>
+            <label for="image">ImageUrl</label>
+            <input type="text" id="image" name="imageUrl">
+            <label for="difficulty">Difficulty</label>
+            <select id="difficulty" name="difficultyLevel">
+                <option value="1">1 - Very Easy</option>
+                <option value="2">2 - Easy</option>
+                <option value="3">3 - Medium (Standard 3x3)</option>
+                <option value="4">4 - Intermediate</option>
+                <option value="5">5 - Expert</option>
+                <option value="6">6 - Hardcore</option>
             </select>
-
             <input type="submit" value="Create">
         </form>
     </div>

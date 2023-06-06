@@ -1,16 +1,24 @@
 const router = require('express').Router();
-// controler functions for posts routes
+// manager
+const postsManager = require('../managers/postsManager');
 
 //path: /posts
  router.get("/create", (req, res) => {
     res.render("create");
+     console.log(postsManager.getAllPosts())
  })
-
 router.post("/create", (req, res) => {
-    console.log(req.body);
 
-    res.send("Create post");
+    const {name, description, imageUrl, difficultyLevel } = req.body;
+
+    postsManager.create({
+        name,
+        description,
+        imageUrl,
+        difficultyLevel: Number(difficultyLevel)
+    })
+
+    res.redirect('/')
 })
-
 
 module.exports = router;
