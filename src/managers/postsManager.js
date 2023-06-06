@@ -1,10 +1,12 @@
+const uniqueId = require('uniqid')
+
 const posts = [];
 
 exports.getAllPosts = () => posts.slice();
 
 exports.create = (postData) => {
     const newPost = {
-        id: posts.length + 1,
+        id: uniqueId(),
         ...postData,
     }
     posts.push(newPost);
