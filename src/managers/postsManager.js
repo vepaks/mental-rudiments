@@ -12,5 +12,3 @@ exports.create = (postData) => {
     posts.push(newPost);
     return newPost;
 }
-
-
