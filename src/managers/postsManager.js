@@ -8,7 +8,6 @@ const posts = [
         imageUrl: 'asasasasas',
         difficultyLevel: 2
     }
-
 ];
 
 exports.getAllPosts = () => posts.slice();
@@ -22,9 +21,6 @@ exports.create = (postData) => {
     return newPost;
 }
 
-
 exports.getOne = (postId) => {
-   const postid = posts.find(x => x.id === postId)
-    console.log(postid.id)
-    return postid
+    return posts.find(x => x.id === postId)
 }

@@ -5,7 +5,6 @@ const postsManager = require('../managers/postsManager');
 //path: /posts
  router.get("/create", (req, res) => {
     res.render("create");
-     console.log(postsManager.getAllPosts())
  })
 router.post("/create", (req, res) => {
 
@@ -23,6 +22,9 @@ router.post("/create", (req, res) => {
 
 router.get('/:postId/details', (req, res) => {
     const post = postsManager.getOne(req.params.postId)
+    if (!post) {
+       return res.redirect('/404')
+    }
     res.render('details', {...post})
 })
 

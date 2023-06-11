@@ -15,6 +15,9 @@ handlebarsConfig(app)
 // Routes
 app.use(homeControler)
 app.use("/posts", postsControler)
+app.use("*", (req, res) => {
+    res.redirect("/404")
+})
 
 app.listen(PORT, () => {
     console.log(`Server is running on port http://localhost:${PORT}.`);
