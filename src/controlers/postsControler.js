@@ -21,4 +21,9 @@ router.post("/create", (req, res) => {
     res.redirect('/')
 })
 
+router.get('/:postId/details', (req, res) => {
+    const post = postsManager.getOne(req.params.postId)
+    res.render('details', {...post})
+})
+
 module.exports = router;

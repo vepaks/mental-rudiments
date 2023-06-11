@@ -1,6 +1,15 @@
 const uniqueId = require('uniqid')
 
-const posts = [];
+const posts = [
+    {
+        id: 'dmdh6u4fhlirqhish',
+        name: 'asasasasas',
+        description: 'asasas',
+        imageUrl: 'asasasasas',
+        difficultyLevel: 2
+    }
+
+];
 
 exports.getAllPosts = () => posts.slice();
 
@@ -11,4 +20,11 @@ exports.create = (postData) => {
     }
     posts.push(newPost);
     return newPost;
+}
+
+
+exports.getOne = (postId) => {
+   const postid = posts.find(x => x.id === postId)
+    console.log(postid.id)
+    return postid
 }
