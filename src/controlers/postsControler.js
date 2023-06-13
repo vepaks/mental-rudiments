@@ -6,11 +6,11 @@ const postsManager = require('../managers/postsManager');
  router.get("/create", (req, res) => {
     res.render("create");
  })
-router.post("/create", (req, res) => {
+router.post("/create", async (req, res) => {
 
     const {name, description, imageUrl, difficultyLevel } = req.body;
 
-    postsManager.create({
+   await postsManager.create({
         name,
         description,
         imageUrl,
@@ -20,8 +20,8 @@ router.post("/create", (req, res) => {
     res.redirect('/')
 })
 
-router.get('/:postId/details', (req, res) => {
-    const post = postsManager.getOne(req.params.postId)
+router.get('/:postId/details', async (req, res) => {
+    const post = await postsManager.getOne(req.params.postId)
     if (!post) {
        return res.redirect('/404')
     }

@@ -1,8 +1,8 @@
 const mongoose = require('mongoose');
 
 const postSchema = new mongoose.Schema ({
-    title: String,
-    text: String,
+    name: String,
+    description: String,
     imageUrl: String,
     difficultyLevel: Number,
 })

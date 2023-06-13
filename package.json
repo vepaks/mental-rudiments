@@ -16,6 +16,7 @@
     "uniqid": "^5.4.0"
   },
   "devDependencies": {
+    "eslint": "^8.42.0",
     "nodemon": "^2.0.22",
     "prettier": "^2.8.8"
   }
