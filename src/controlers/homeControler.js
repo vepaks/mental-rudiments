@@ -2,8 +2,9 @@ const router = require('express').Router()
 const postsManager = require('../managers/postsManager');
 
 router.get( '/', (req, res) => {
-    const posts = postsManager.getAllPosts()
-    res.render('index', { posts });
+    const { search, from, to } = req.query;
+    const posts = postsManager.getAllPosts(search, from, to);
+    res.render('index', { posts, search, from, to });
 })
 
 router.get('/about', (req, res) => {
