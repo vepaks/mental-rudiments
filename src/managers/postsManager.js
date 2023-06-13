@@ -33,14 +33,13 @@ exports.getAllPosts = (search, from, to ) => {
         filteredPosts = filteredPosts.filter(x => x.name.toLowerCase().includes(search.toLowerCase()))
     }
 
+    if (from) {
+        filteredPosts = filteredPosts.filter(x => x.difficultyLevel >= Number(from))
+    }
 
-    // if (from) {
-    //     filteredPosts = filteredPosts.filter(x => x.difficultyLevel >= Number(from))
-    // }
-    //
-    // if (to) {
-    //     filteredPosts = filteredPosts.filter(x => x.difficultyLevel <= Number(to))
-    // }
+    if (to) {
+        filteredPosts = filteredPosts.filter(x => x.difficultyLevel <= Number(to))
+    }
     return filteredPosts;
 };
 exports.getOne = (postId) => {
