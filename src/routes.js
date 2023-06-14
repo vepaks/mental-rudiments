@@ -4,6 +4,7 @@ const homeControler = require('./controlers/homeControler')
 const postsControler = require('./controlers/postsControler')
 const accessoryControler = require('./controlers/accesoryControler')
 
+
 // Routes
 router.use(homeControler)
 router.use("/posts", postsControler)
