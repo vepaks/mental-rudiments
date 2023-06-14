@@ -6,9 +6,13 @@
                 <form method="POST">
                     <label for="accessory">Accessories</label>
                     <select id="accessory" name="accessory">
+                        {{#if hasAccessory}}
                         {{#each accessory}}
                             <option value="{{_id}}">{{name}}</option>
                         {{/each}}
+                        {{else}}
+                            <h3 class="italic"> No more accessories to attach</h3>
+                        {{/if}}
                     </select>
                     <input type="submit" value="Attach">
                     </form>

@@ -32,8 +32,9 @@ router.get('/:postId/details', async (req, res) => {
 router.get('/:postId/attach-accessory', async (req, res) => {
    const post = await postsManager.getOne(req.params.postId).lean()
     const accessory = await accessoryManager.getAllAccessory()
+    const hasAccessory = accessory.length > 0
 
-  res.render('accessory/attach', {post, accessory })
+  res.render('accessory/attach', {post, accessory, hasAccessory })
 })
 
 module.exports = router;
