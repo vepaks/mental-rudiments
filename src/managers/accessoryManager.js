@@ -5,3 +5,5 @@ exports.create = async ( accessoryData ) => {
     await accessory.save()
     return accessory;
 }
+
+exports.getAllAccessory = () => Accessory.find().lean()

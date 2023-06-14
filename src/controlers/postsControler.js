@@ -1,6 +1,7 @@
 const router = require('express').Router();
 // manager
 const postsManager = require('../managers/postsManager');
+const accessoryManager = require('../managers/accessoryManager');
 
 //path: /posts
  router.get("/create", (req, res) => {
@@ -29,7 +30,10 @@ router.get('/:postId/details', async (req, res) => {
 })
 
 router.get('/:postId/attach-accessory', async (req, res) => {
-  res.render('accessory/attach')
+   const post = await postsManager.getOne(req.params.postId).lean()
+    const accessory = await accessoryManager.getAllAccessory()
+
+  res.render('accessory/attach', {post, accessory })
 })
 
 module.exports = router;
