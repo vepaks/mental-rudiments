@@ -29,7 +29,7 @@ router.get('/:postId/details', async (req, res) => {
 })
 
 router.get('/:postId/attach-accessory', async (req, res) => {
-    res.render('/accessory/attach')
+  res.render('accessory/attach')
 })
 
 module.exports = router;
