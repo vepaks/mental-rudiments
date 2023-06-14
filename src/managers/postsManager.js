@@ -17,7 +17,7 @@ exports.getAllPosts =async (search, from, to ) => {
     return filteredPosts;
 };
 exports.getOne = (postId) => {
-    return Post.findById(postId).lean();
+    return Post.findById(postId)
 }
 
 exports.create = async (postData) => {

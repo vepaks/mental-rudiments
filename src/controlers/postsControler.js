@@ -21,7 +21,7 @@ router.post("/create", async (req, res) => {
 })
 
 router.get('/:postId/details', async (req, res) => {
-    const post = await postsManager.getOne(req.params.postId)
+    const post = await postsManager.getOne(req.params.postId).lean()
     if (!post) {
        return res.redirect('/404')
     }
