@@ -1,9 +1,8 @@
 const Accessory = require("../models/Accessory")
 
-exports.create = async ( accessoryData ) => {
+exports.create =  ( accessoryData ) => {
     const accessory = new Accessory(accessoryData)
-    await accessory.save()
-    return accessory;
+    return  accessory.save()
 }
 
-exports.getAllAccessory = () => Accessory.find().lean()
+exports.getAllAccessory = () => Accessory.find()

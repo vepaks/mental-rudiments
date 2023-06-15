@@ -31,10 +31,17 @@ router.get('/:postId/details', async (req, res) => {
 
 router.get('/:postId/attach-accessory', async (req, res) => {
    const post = await postsManager.getOne(req.params.postId).lean()
-    const accessory = await accessoryManager.getAllAccessory()
+    const accessory = await accessoryManager.getAllAccessory().lean()
     const hasAccessory = accessory.length > 0
-
   res.render('accessory/attach', {post, accessory, hasAccessory })
+})
+
+router.post('/:postId/attach-accessory', async (req, res) => {
+    const {accessoryId} = req.body
+    const postId = req.params.postId;
+
+    await postsManager.attachAccessory(postId, accessoryId)
+    res.redirect(`/posts/${postId}/details`)
 })
 
 module.exports = router;

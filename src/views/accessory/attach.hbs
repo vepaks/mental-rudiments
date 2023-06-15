@@ -5,7 +5,7 @@
                 <img class="cube" src="{{post.imageUrl}}">
                 <form method="POST">
                     <label for="accessory">Accessories</label>
-                    <select id="accessory" name="accessory">
+                    <select id="accessory" name="accessoryId">
                         {{#if hasAccessory}}
                         {{#each accessory}}
                             <option value="{{_id}}">{{name}}</option>
