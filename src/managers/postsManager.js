@@ -17,9 +17,8 @@ exports.getAllPosts = async (search, from, to ) => {
 };
 
 // get one post
-exports.getOne = (postId) => {
-    return Post.findById(postId)
-}
+exports.getOne = (postId) => Post.findById(postId);
+exports.getOneWithAccessories = (postId) => this.getOne(postId).populate('accessories');
 
 // create a post
 exports.create = async (postData) => {

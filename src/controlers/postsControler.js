@@ -22,7 +22,7 @@ router.post("/create", async (req, res) => {
 })
 
 router.get('/:postId/details', async (req, res) => {
-    const post = await postsManager.getOne(req.params.postId).lean()
+    const post = await postsManager.getOneWithAccessories(req.params.postId).lean()
     if (!post) {
        return res.redirect('/404')
     }
@@ -41,7 +41,7 @@ router.post('/:postId/attach-accessory', async (req, res) => {
     const postId = req.params.postId;
 
     await postsManager.attachAccessory(postId, accessoryId)
-    res.redirect(`/posts/${postId}/details`)
+    res.redirect( `/posts/${postId}/details`)
 })
 
 module.exports = router;
