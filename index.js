@@ -17,7 +17,7 @@ const plugins = [
 
 const server = http.createServer(createHandler(plugins, services));
 
-const port = 3030;
+const port = process.env.PORT || 3030;
 server.listen(port);
 console.log(`Server started on port ${port}. You can make requests to http://localhost:${port}/`);
 console.log(`Admin panel located at http://localhost:${port}/admin`);
